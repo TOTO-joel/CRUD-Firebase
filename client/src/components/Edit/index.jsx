@@ -15,7 +15,7 @@ export default class Edit extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get(`http://localhost:3000/${this.props.match.params.id}`).then((res) => {
+    Axios.get(`https://crud-firebase-bice.vercel.app/${this.props.match.params.id}`).then((res) => {
       if (res.data != null) {
         let board = res.data;
         this.setState({
@@ -41,7 +41,7 @@ export default class Edit extends React.Component {
 
     const { title, description, author } = this.state;
 
-    Axios.put(`http://localhost:3000/${this.state.key}`, {
+    Axios.put(`https://crud-firebase-bice.vercel.app/${this.state.key}`, {
       title,
       description,
       author

@@ -13,7 +13,7 @@ export default class List extends React.Component {
   };
 
   getData = () => {
-    Axios.get("http://localhost:3000").then((res) => {
+    Axios.get("https://crud-firebase-bice.vercel.app").then((res) => {
       let words = res.data;
       let newState = [];
       for (let word in words) {
@@ -31,7 +31,7 @@ export default class List extends React.Component {
   };
 
   deleteData = (id) => {
-    Axios.delete(`http://localhost:3000/${id}`).then((res) => {
+    Axios.delete(`https://crud-firebase-bice.vercel.app/${id}`).then((res) => {
       alert("Berhasil Delete Data");
       this.getData();
     });
